@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html ng-app="myModule" >
+<head>
+    <title>Directive Example</title>
+    <link href="scripts/styles.css" rel="stylesheet" />
+    <script src="scripts/angular.js"></script>
+    <script src="scripts/common.js"></script>
+    <script src="scripts/customfilter.js"></script>
+</head>
+<body ng-controller="customfilterController">
+    <h3>Custom Filter</h3><br />
+    <input type="checkbox" ng-model="hideSalary" /> Hide Salary
+    <div ng-init="i=1">
+        <table>
+            <thead>
+                <tr>
+                    <th>S. No.</th>
+                    <th>First name</th>
+                    <th>Last name</th>
+                    <th>Gender</th>
+                    <th ng-hide="hideSalary">Salary</th>
+                    <th ng-show="hideSalary">Salary</th>
+                    <th>Joining date</th></tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="employee in employees">
+                    <td>{{i+ $index}}</td>
+                    <td>{{ employee.firstName}}</td>
+                    <td>{{ employee.lastName}}</td>
+                    <td>{{ employee.gender | gender}} </td>
+                    <td ng-hide="hideSalary">{{ employee.salary | currency }}</td>
+                    <td ng-show="hideSalary">#####</td>
+                    <td>{{ employee.joindate | date: "dd-MMM-yyyy"}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <backtolist></backtolist><br /><br />
+    <div ng-include="'Footer.html'"></div>
+</body>
+</html>

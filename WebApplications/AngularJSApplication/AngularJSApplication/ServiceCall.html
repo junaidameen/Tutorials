@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html ng-app="myModule" >
+<head>
+    <title>Service Call Example</title>
+    <link href="scripts/styles.css" rel="stylesheet" />
+    <script src="scripts/angular.js"></script>
+    <script src="scripts/common.js"></script>
+    <script src="scripts/servicecall.js"></script>
+</head>
+<body ng-controller="serviceCallController">
+    <h3>Service Call Example</h3><br />
+     <table>
+            <thead>
+                <tr>
+                    <th>Emp. Id</th>
+                    <th>Name</th>
+                    <th>Gender</th>
+                    <th>Salary</th>
+            </thead>
+            <tbody>
+                <tr ng-repeat="employee in employees">
+                    <td>{{ employee.EmployeeId}}</td>
+                    <td>{{ employee.Name}}</td>
+                    <td>{{ employee.Gender}} </td>
+                    <td>{{ employee.Salary | currency }}</td>
+                </tr>
+            </tbody>
+        </table>
+    <backtolist></backtolist>
+</body>
+</html>

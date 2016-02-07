@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html ng-app="myModule" >
+<head>
+    <title>Directive Example</title>
+    <script src="scripts/angular.js"></script>
+    <script src="scripts/common.js"></script>
+    <script src="scripts/handlevents.js"></script>
+</head>
+<body ng-controller="eventHandleController">
+ <h3>Handling Events</h3>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Likes</th>
+                    <th>Dislikes</th>
+                    <th>Like/Dislikes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="technology in technologies">
+                    <td>{{ technology.name }}</td>
+                    <td>{{ technology.likes }}</td>
+                    <td>{{ technology.dislikes}}</td>
+                    <td>
+                        <input type="button" value="Like" ng-click="incrementLikes(technology)" />
+                        <input type="button" value="DisLike" ng-click="incrementDislikes(technology)" />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>   
+
+       <backtolist></backtolist>
+</body>
+</html>

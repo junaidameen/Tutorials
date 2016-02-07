@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html ng-app="myModule" ng-controller="commonController">
+<head>
+    <title>{{bexptitle}}</title>
+    <script src="scripts/angular.js"></script>
+    <script src="scripts/common.js"></script>
+    <script src="scripts/directive.js"></script>
+</head>
+<body>
+    <h3>{{bexptitle}}</h3>
+   <div  style="font-family:Arial">
+       Addition of two numbers: <input type="number" ng-model="value1" /> + <input type="number" ng-model="value2" /> = {{value1 + value2}}<br /><br />
+       Subtraction of two numbers: <input type="number" ng-model="valuesub1" /> - <input type="number" ng-model="valuesub2" /> = {{valuesub1 - valuesub2}}<br />
+   </div>
+    <br /><br />
+   <div  style="font-family:Arial">
+       <b>First Name:</b> {{employee.firstname}}<br />
+       <b>Last Name:</b> {{employee.lastname}}<br />
+       <b>Gender:</b> {{employee.gender}}<br />
+    </div>
+    <backtolist></backtolist>
+</body>
+</html>

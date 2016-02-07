@@ -1,0 +1,153 @@
+﻿<!DOCTYPE html>
+<html ng-app="myModule" >
+<head>
+    <title>Directive Example</title>
+    <link href="scripts/styles.css" rel="stylesheet" />
+    <script src="scripts/angular.js"></script>
+    <script src="scripts/common.js"></script>
+    <script src="scripts/filters.js"></script>
+</head>
+<body ng-controller="filterController">
+    
+    <h3>Filters (formatting, date, limitTo)</h3><br />
+    <div>
+     Rows to display: <input type="number" min="0" max="5" ng-model="rowLimit" />
+        <br /> <br /> 
+        <table>
+            <thead>
+                <tr>
+                    <th>First name</th>
+                    <th>Last name</th>
+                    <th>Gender</th>
+                    <th>Salary (Number)</th>
+                    <th>Salary (Currency)</th>
+                    <th>Joining date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="employee in employees | limitTo: rowLimit">
+                    <td>{{ employee.firstName | uppercase }}</td>
+                    <td>{{ employee.lastName | uppercase }}</td>
+                    <td>{{ employee.gender | lowercase}} </td>
+                    <td>{{ employee.salary | number : 2 }}</td>
+                    <td>{{ employee.salary | currency : "&" }}</td>
+                    <td>{{ employee.joindate | date: "dd-MMM-yyyy"}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+  
+    <h3>Filters (Sorting)</h3><br />
+    <div>
+        Sort By: <select ng-model="sortColumn">
+                    <option value="firstName">First Name ASC</option>
+                    <option value="gender">Gender ASC</option>
+                    <option value="joindate">Join Date ASC</option>
+                    <option value="-salary">Salary DESC</option>
+                 </select>
+        <br /> <br /> 
+        <table>
+            <thead>
+                <tr>
+                    <th ng-click="sortData('firstName')">First name<div ng-class="getSortClass('firstName')"></div></th>
+                    <th ng-click="sortData('lastName')">Last name<div ng-class="getSortClass('lastName')"></div></th>
+                    <th ng-click="sortData('gender')">Gender<div ng-class="getSortClass('gender')"></div></th>
+                    <th ng-click="sortData('salary')">Salary<div ng-class="getSortClass('salary')"></div></th>
+                    <th ng-click="sortData('joindate')">Joining date<div ng-class="getSortClass('joindate')"></div></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="employee in employees | orderBy: sortColumn : reverseSort">
+                    <td>{{ employee.firstName}}</td>
+                    <td>{{ employee.lastName}}</td>
+                    <td>{{ employee.gender}} </td>
+                    <td>{{ employee.salary | currency }}</td>
+                    <td>{{ employee.joindate | date: "dd-MMM-yyyy"}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h3>Search Filter</h3><br />
+    <div>
+        Search By: <input type="text" ng-model="searchText.firstName" placeholder="Search employee" />
+        <br /> <br /> 
+        <table>
+            <thead>
+                <tr>
+                    <th>First name</th>
+                    <th>Last name</th>
+                    <th>Gender</th>
+                    <th>Salary</th>
+                    <th>Joining date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="employee in employees | filter:searchText">
+                    <td>{{ employee.firstName}}</td>
+                    <td>{{ employee.lastName}}</td>
+                    <td>{{ employee.gender}} </td>
+                    <td>{{ employee.salary | currency}}</td>
+                    <td>{{ employee.joindate | date: "dd-MMM-yyyy"}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h3>Search Filter By Multiple properties</h3><br />
+    <div>
+        <input type="text" ng-model="searchMText.firstName" placeholder="Search first name" />
+        <input type="text" ng-model="searchMText.lastName" placeholder="Search last name" />
+        <input type="checkbox" ng-model="exactmatch">Exact Match</input>
+        <br /> <br /> 
+        <table>
+            <thead>
+                <tr>
+                    <th>First name</th>
+                    <th>Last name</th>
+                    <th>Gender</th>
+                    <th>Salary</th>
+                    <th>Joining date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="employee in employees | filter:searchMText : exactmatch">
+                    <td>{{ employee.firstName}}</td>
+                    <td>{{ employee.lastName}}</td>
+                    <td>{{ employee.gender}} </td>
+                    <td>{{ employee.salary | currency}}</td>
+                    <td>{{ employee.joindate | date: "dd-MMM-yyyy"}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h3>Search Filter By two properties using single textbox</h3><br />
+    <div>
+        <input type="text" ng-model="searchtwoProp" placeholder="Search by first & last name" />
+        <br /> <br /> 
+        <table>
+            <thead>
+                <tr>
+                    <th>First name</th>
+                    <th>Last name</th>
+                    <th>Gender</th>
+                    <th>Salary</th>
+                    <th>Joining date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="employee in employees | filter:search">
+                    <td>{{ employee.firstName}}</td>
+                    <td>{{ employee.lastName}}</td>
+                    <td>{{ employee.gender}} </td>
+                    <td>{{ employee.salary | currency}}</td>
+                    <td>{{ employee.joindate | date: "dd-MMM-yyyy"}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <backtolist></backtolist>
+</body>
+</html>

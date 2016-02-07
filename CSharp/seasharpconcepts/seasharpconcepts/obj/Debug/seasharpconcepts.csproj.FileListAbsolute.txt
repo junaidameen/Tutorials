@@ -1,0 +1,6 @@
+D:\Projects\Learning\Jan2016\seasharpconcepts\seasharpconcepts\bin\Debug\seasharpconcepts.exe.config
+D:\Projects\Learning\Jan2016\seasharpconcepts\seasharpconcepts\bin\Debug\seasharpconcepts.exe
+D:\Projects\Learning\Jan2016\seasharpconcepts\seasharpconcepts\bin\Debug\seasharpconcepts.pdb
+D:\Projects\Learning\Jan2016\seasharpconcepts\seasharpconcepts\obj\Debug\seasharpconcepts.exe
+D:\Projects\Learning\Jan2016\seasharpconcepts\seasharpconcepts\obj\Debug\seasharpconcepts.pdb
+D:\Projects\Learning\Jan2016\seasharpconcepts\seasharpconcepts\obj\Debug\seasharpconcepts.csprojResolveAssemblyReference.cache
