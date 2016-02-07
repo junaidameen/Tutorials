@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html ng-app="myModule" >
+<head>
+    <title>Directive Example</title>
+    <script src="scripts/angular.js"></script>
+    <script src="scripts/common.js"></script>
+    <script src="scripts/directive.js"></script>
+</head>
+<body ng-controller="directiveController">
+    <br />
+    <b>Country:</b>{{country.name}}<br /><br />
+    <b>Capital:</b>{{country.capital}}<br /><br />
+    <img ng-src="{{country.flag}}" /><br />
+
+    <h3>Repeat Directive</h3>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Gender</th>
+                    <th>Salary</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="employee in employees" ng-init="myIndex=$index">
+                    <td>{{ employee.firstName }} - Index : {{$index}}</td>
+                    <td>{{ employee.lastName }} - Index : {{myIndex}}</td>
+                    <td>{{ employee.gender}}</td>
+                    <td>{{ employee.salary}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+     <backtolist></backtolist>
+</body>
+</html>

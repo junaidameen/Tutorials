@@ -1,0 +1,16 @@
+﻿<!DOCTYPE html>
+<html data-ng-app="myModule" data-ng-controller="commonController">
+<head>
+    <title>{{indextitle}}</title>
+    <script src="scripts/angular.js"></script>
+    <script src="scripts/common.js"></script>
+</head>
+<body >
+    <h2>{{indextitle}}</h2>
+    <div ng-repeat="example in examples" style="font-family:Arial">
+        <ul>
+            <li><a href="{{example.filename}}">{{example.topic}}</a></li>
+        </ul>
+    </div>
+</body>
+</html>

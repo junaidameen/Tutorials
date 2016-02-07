@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html data-ng-app="myModule" data-ng-controller="anchorscrollController">
+<head>
+    <title>Scroll Example</title>
+    <script src="scripts/angular.js"></script>
+    <script src="scripts/common.js"></script>
+    <script src="scripts/anchorscrollservice.js"></script>
+</head>
+<body >
+    <button id="top" ng-click="scrollTo('bottom')">Go to bottom of the page</button><br /><br />
+    <div>
+        <p><b>AngularJS</b> is a very powerful JavaScript Framework. It is used in Single Page Application (SPA) projects. It extends HTML DOM with additional attributes and makes it more responsive to user actions. AngularJS is open source, completely free, and used by thousands of developers around the world. It is licensed under the Apache license version 2.0.</p>
+<h1>Audience</h1>
+<p>This tutorial is designed for software professionals who want to learn the basics of AngularJS and its programming concepts in simple and easy steps. It describes the components of AngularJS with suitable examples.</p>
+<h1>Prerequisites</h1>
+<p>You should have a basic understanding of JavaScript and any text editor. As we are going to develop web-based applications using AngularJS, it will be good if you have an understanding of other web technologies such as HTML, CSS, AJAX, etc.</p>
+<ol>
+        <li><p>Getting started: just the HTML</p>
+        
+        <p>You can use <code>&lt;html&gt;</code> and <code>&lt;head&gt;</code> and <code>&lt;body&gt;</code> tags like on a regular, full web page, or you can just use some bold and italic tags if you want. You can be as fancy or a simple as you want.</p></li>
+        <li><p>Using CSS and JavaScript</p>
+        
+        <p>It&#39;s perfectly fine to use CSS and javascript inline with your HTML like you normally would on a web page. But if you want to keep your code more organized, you can use our built-in CSS editor and JavaScript Editor.</p>
+        
+        <p>Type your CSS into the CSS editor <em>without</em> <code>&lt;style&gt;&lt;/style&gt;</code> tags. Then include a special smart tag in your HTML to make the CSS show up. By default, the text in the CSS editor shows you the tag to use.</p>
+        
+        <p>JavaScript is essentially the same. Type in your javascript without surrounding <code>&lt;script&gt;&lt;/script&gt;</code> tags, then include the special smart tag for javascript in your HTML.</p></li>
+        <li><p>External scripts, css, images, and other assets</p>
+        
+        <p>Because Facebook uses https (secure hosting), and because your tab lives in an iframe inside Facebook, many browsers will have trouble displaying content not loaded over https.</p>
+        
+        <p>What this means is that anytime you use an image, external javascript, css, something like an SWF, or anything else, you&#39;ll need to load it over https or there may be issues.</p>
+        
+        <p>If you have assets loaded over http, sometimes browsers will display a security warning, other times they show a warning icon in the address bar, but in the worst case they will simply not display your tab at all.</p></li>
+        <li><p>Forms and links</p>
+        
+        <p>Your tab will show up inside an iframe inside Facebook. By default anytime a user clicks a link, it will load that link into the same iframe. Anytime a user submits a form (like for paypal), that page handling the form response will also load inside the iframe.</p>
+        
+        <p>Sometimes this is what you want, but most of the time you&#39;ll want links and forms to load in a full browser window, not trapped inside Facebook.</p>
+        
+        <p>You can pop out links and forms by simply using a target=&quot;_blank&quot; attribute in the link, like this:</p>
+        
+        <p><code>&lt;a href=&#39;http://example.com&#39; target=&#39;_blank&#39;&gt;go to example.com&lt;/a&gt;</code></p>
+        
+        <p><code>&lt;form action=&#39;http://example.com&#39; target=&#39;_blank&#39;&gt;&lt;/form&gt;</code></p>
+        
+        <p>You can make the page load in the current browser tab, replacing Facebook, by using target=&#39;_top&#39;:</p>
+            <div class="doc-box doc-info">
+Express looks up the files relative to the static directory, so the name of the static directory is not part of the URL.
+</div>
+<p>To use multiple static assets directories, call the <code class="highlighter-rouge">express.static</code> middleware function multiple times:</p>
+<pre><code class="language-javascript" translate="no">
+app.use(express.static('public'));
+app.use(express.static('files'));
+</code></pre>
+<p>Express looks up the files in the order in which you set the static directories with the <code class="highlighter-rouge">express.static</code> middleware function.</p>
+<p>To create a virtual path prefix (where the path does not actually exist in the file system) for files that are served by the <code class="highlighter-rouge">express.static</code> function, <a href="/en/4x/api.html#app.use">specify a mount path</a> for the static directory, as shown below:</p>
+<pre><code class="language-javascript" translate="no">
+app.use('/static', express.static('public'));
+</code></pre>
+<p>Now, you can load the files that are in the <code class="highlighter-rouge">public</code> directory from the <code class="highlighter-rouge">/static</code> path prefix.</p>
+<pre class="plain-text"><code class="plain-text" translate="no">
+http://localhost:3000/static/images/kitten.jpg
+http://localhost:3000/static/css/style.css
+http://localhost:3000/static/js/app.js
+http://localhost:3000/static/images/bg.png
+http://localhost:3000/static/hello.html
+</code></pre>
+<p>However, the path that you provide to the <code class="highlighter-rouge">express.static</code> function is relative to the directory from where you launch your <code class="highlighter-rouge">node</code> process. If you run the express app from another directory, it’s safer to use the absolute path of the directory that you want to serve:</p>
+
+    </div>
+    <button id="bottom" ng-click="scrollTo('top')">Go to top of the page</button>
+</body>
+</html>
